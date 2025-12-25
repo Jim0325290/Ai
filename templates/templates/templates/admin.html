@@ -1,0 +1,20 @@
+<h2>管理員後台 / Admin Panel</h2>
+
+<h3>新增或修改規則 / Add or Edit Rule</h3>
+<form method="post">
+  <input name="key" placeholder="允許輸入 / Allowed Input">
+  <input name="value" placeholder="AI 回覆 / AI Response">
+  <button>新增 / 更新 (Add / Update)</button>
+</form>
+
+<h3>目前規則 / Current Rules</h3>
+<ul>
+{% for k, v in data.items() %}
+  <li>
+    <strong>{{ k }}</strong> → {{ v }}
+    <a href="/delete/{{ k }}">刪除 / Delete</a>
+  </li>
+{% endfor %}
+</ul>
+
+<a href="/logout">登出 / Logout</a>
